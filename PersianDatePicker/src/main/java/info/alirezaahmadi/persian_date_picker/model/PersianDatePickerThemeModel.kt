@@ -31,8 +31,8 @@ data class PersianDatePickerThemeModel(
 
 val PersianDatePickerDefault = PersianDatePickerThemeModel(
     textColor = Color.Black,
-    backwardIcon = R.drawable.ic_backward,
-    forwardIcon = R.drawable.ic_forward,
+    backwardIcon = R.drawable.ic_backward_persian_date_picker,
+    forwardIcon = R.drawable.ic_forward_persian_date_picker,
     daysNotExistsInMonthContainerColor = Color.White,
     daysNotExistsInMonthTextColor = Color(0xFFCCCCCC),
     daysExistsInMonthContainerColor = Color(0xFFF8F8FA),
@@ -47,9 +47,9 @@ val PersianDatePickerDefault = PersianDatePickerThemeModel(
     colorOfTheGoTodayButtonContainer = Color.White,
     colorOfTheGoTodayButtonText = Color(0xFF2F80ED),
     colorOfTheSelectedDayContainer = Color(0xFF2F80ED),
-    fontFamily = R.font.font,
+    fontFamily = R.font.font_persian_date_picker,
     colorOfTheSelectedDayText = Color.White,
     showButtons = true,
-    closeIcon = R.drawable.ic_close
+    closeIcon = R.drawable.ic_close_persian_date_picker
 )
 
