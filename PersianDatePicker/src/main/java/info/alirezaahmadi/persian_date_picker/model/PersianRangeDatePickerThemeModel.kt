@@ -1,11 +1,15 @@
 package info.alirezaahmadi.persian_date_picker.model
 
+import androidx.annotation.DrawableRes
+import androidx.annotation.FontRes
 import androidx.compose.ui.graphics.Color
 import info.alirezaahmadi.persian_date_picker.R
 
 data class PersianRangeDatePickerThemeModel(
     val textColor: Color,
+    @DrawableRes
     val forwardIcon: Int,
+    @DrawableRes
     val backwardIcon: Int,
     val daysNotExistsInMonthContainerColor: Color,
     val daysNotExistsInMonthTextColor: Color,
@@ -22,12 +26,15 @@ data class PersianRangeDatePickerThemeModel(
     val colorOfTheGoTodayButtonText: Color,
     val colorOfTheSelectedDayContainer: Color,
     val colorOfTheSelectedDayText: Color,
+    @FontRes
     val fontFamily: Int,
-    val showButtons:Boolean,
+    val showButtons: Boolean,
     val colorOfBetweenSelectedDayContainer: Color,
-    val colorOfBetweenSelectedDayText:Color,
-    val closeIcon:Int
+    val colorOfBetweenSelectedDayText: Color,
+    @DrawableRes
+    val closeIcon: Int
 )
+
 val PersianRangeDatePickerDefault = PersianRangeDatePickerThemeModel(
     textColor = Color.Black,
     backwardIcon = R.drawable.ic_backward,

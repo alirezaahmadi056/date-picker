@@ -68,7 +68,7 @@ class MainActivity : ComponentActivity() {
                             onDismissRequest = { showDatePicker.value = false },
                             controller = object : OnDatePickerEvents {
                                 override fun onConfirmButtonClick(year: Int, month: Int, day: Int) {
-                                    Log.i("jjjj", "onConfirmButtonClick: ${day}")
+                                    Log.i("result", "onConfirmButtonClick: ${day}")
                                 }
 
                                 override fun onClose() {
@@ -94,9 +94,19 @@ class MainActivity : ComponentActivity() {
                                 month: Int,
                                 day: List<Int>
                             ) {
-                                for(days in day){
-                                    Log.i("jjj", "onConfirmButtonClick: ${days}")
-                                }
+
+                            }
+
+                            override fun onClose() {
+                                super.onClose()
+                            }
+
+                            override fun onGoToday() {
+                                super.onGoToday()
+                            }
+
+                            override fun onDateChange(year: Int, month: Int, day: ArrayList<Int>) {
+                                super.onDateChange(year, month, day)
                             }
                         })
                     }
