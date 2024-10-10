@@ -34,9 +34,11 @@ class DatePickerGenerator private constructor() {
         var nextDaysOfMonth = 1
         val daysList = ArrayList<DayInfoModel>()
         jalaliCalendar.day = 1
-        for (i in 1..jalaliCalendar.dayOfWeek) {
-            daysList.add(DayInfoModel(false, previousDaysOfMonth, false))
-            previousDaysOfMonth -= 1
+        if (jalaliCalendar.dayOfWeek != Calendar.SATURDAY){
+            for (i in 1..jalaliCalendar.dayOfWeek) {
+                daysList.add(DayInfoModel(false, previousDaysOfMonth, false))
+                previousDaysOfMonth -= 1
+            }
         }
         daysList.reverse()
         for (i in 1..currentDaysOfMonth) {

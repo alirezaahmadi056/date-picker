@@ -1,5 +1,6 @@
 package info.alirezaahmadi.persian_date_picker.view
 
+import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -57,7 +58,9 @@ fun PersianDatePickerDialog(
     theme: PersianDatePickerThemeModel = PersianDatePickerDefault,
     controller: OnDatePickerEvents
 ) {
-    val jalaliCalendar = JalaliCalendar()
+    val jalaliCalendar = remember {
+        JalaliCalendar()
+    }
     val year = remember {
         mutableIntStateOf(jalaliCalendar.year)
     }
@@ -71,10 +74,12 @@ fun PersianDatePickerDialog(
         append(year.intValue.toString())
         append(month.value)
     }
-    val daysList = DatePickerGenerator.instance.generateListForPersianDatePicker(
-        year.intValue,
-        numberOfMonth.intValue
-    )
+    val daysList =
+        DatePickerGenerator.instance.generateListForPersianDatePicker(
+            year.intValue,
+            numberOfMonth.intValue
+        )
+
     val selectedDay = remember { mutableIntStateOf(jalaliCalendar.day) }
     val showYearAndMonthPicker = remember { mutableStateOf(false) }
     val yearPickerState = rememberPickerState()
@@ -282,9 +287,12 @@ fun PersianDatePickerDialog(
                 onConfirmation = {
                     year.intValue = yearPickerState.selectedItem.value.toInt()
                     month.value = monthPickerState.selectedItem.value
-                    numberOfMonth.intValue = jalaliCalendar.month
+                    numberOfMonth.intValue = PersianDatePickerModel.month.indexOf(monthPickerState.selectedItem.value) + 1
+                    jalaliCalendar.year = year.intValue
+                    jalaliCalendar.month = numberOfMonth.intValue
                     selectedDay.intValue = jalaliCalendar.day
                     showYearAndMonthPicker.value = false
+
                 })
         }
     }

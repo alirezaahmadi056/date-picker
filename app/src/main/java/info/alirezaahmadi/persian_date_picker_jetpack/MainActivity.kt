@@ -22,6 +22,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import info.alirezaahmadi.persian_date_picker.controller.OnDatePickerEvents
 import info.alirezaahmadi.persian_date_picker.controller.OnRangeDatePickerEvents
+import info.alirezaahmadi.persian_date_picker.model.DayInfoModel
 import info.alirezaahmadi.persian_date_picker.view.PersianDatePickerDialog
 import info.alirezaahmadi.persian_date_picker.view.PersianRangeDatePickerDialog
 import info.alirezaahmadi.persian_date_picker_jetpack.ui.theme.PersianDatePickerJetpackTheme
@@ -105,7 +106,8 @@ class MainActivity : ComponentActivity() {
                                 super.onGoToday()
                             }
 
-                            override fun onDateChange(year: Int, month: Int, day: ArrayList<Int>) {
+                            override fun onDateChange(year: Int, month: Int, day: ArrayList<DayInfoModel>) {
+                                Log.i("jjj", "onDateChange: ${day}")
                                 super.onDateChange(year, month, day)
                             }
                         })

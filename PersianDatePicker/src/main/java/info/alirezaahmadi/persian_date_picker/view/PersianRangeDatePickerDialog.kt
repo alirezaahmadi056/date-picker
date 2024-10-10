@@ -218,6 +218,10 @@ fun PersianRangeDatePickerDialog(
                                                 }
                                             }
                                             selectedRangeDays.intValue = 2
+                                            controller.onDateChange(
+                                                year = year.intValue,
+                                                month =numberOfMonth.intValue,
+                                                days = daysList)
                                         }
 
                                         2 -> {
@@ -323,7 +327,9 @@ fun PersianRangeDatePickerDialog(
                 onConfirmation = {
                     year.intValue = yearPickerState.selectedItem.value.toInt()
                     month.value = monthPickerState.selectedItem.value
-                    numberOfMonth.intValue = jalaliCalendar.month
+                    numberOfMonth.intValue = PersianDatePickerModel.month.indexOf(monthPickerState.selectedItem.value)+1
+                    jalaliCalendar.year = year.intValue
+                    jalaliCalendar.month = numberOfMonth.intValue
                     selectedDay.intValue = jalaliCalendar.day
                     showYearAndMonthPicker.value = false
                 })
