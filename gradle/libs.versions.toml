@@ -1,6 +1,6 @@
 [versions]
-agp = "8.5.2"
-composescrollpicker = "1.0.8"
+agp = "8.5.0-alpha04"
+composescrollpicker = "1.1.0"
 jalalicalendar = "2.0.0"
 kotlin = "2.0.0"
 coreKtx = "1.13.1"

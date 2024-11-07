@@ -30,7 +30,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import info.alirezaahmadi.persian_date_picker.model.PersianDatePickerModel
 import ir.barbossa.composescrollpicker.PickerState
-import ir.barbossa.scrollpicker.ScrollPicker
+import ir.barbossa.composescrollpicker.ScrollPicker
 
 @Composable
 fun PersianYearAndMonthPickerView(
