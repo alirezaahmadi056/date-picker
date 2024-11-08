@@ -7,12 +7,12 @@ plugins {
 
 android {
     namespace = "info.alirezaahmadi.persian_date_picker_jetpack"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "info.alirezaahmadi.persian_date_picker_jetpack"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -52,6 +52,7 @@ android {
 }
 
 dependencies {
+//    implementation("com.github.alirezaahmadi056:date-picker:0.0.5")
     implementation(project(":PersianDatePicker"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

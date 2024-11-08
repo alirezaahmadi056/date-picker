@@ -7,7 +7,7 @@ plugins {
 
 android {
     namespace = "info.alirezaahmadi.persian_date_picker"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         minSdk = 24
@@ -44,7 +44,7 @@ publishing {
         create("release", MavenPublication::class) {
             groupId = "com.github.alirezaahmadi056"
             artifactId = "date-picker"
-            version = "0.0.1"
+            version = "0.0.6"
 
             afterEvaluate {
                 from(components["release"])
