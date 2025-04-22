@@ -2,7 +2,8 @@
 <img src=".github/logo.jpg" alt="barbossa" width="400"/>
 
 # ScreenShot
-<img src=".github/screenshot.jpg"/>
+<img src=".github/screenshot.jpg" width="350"/>
+
 # Setup
 Add the JitPack repository to settings.gradle file
 ```gradle
