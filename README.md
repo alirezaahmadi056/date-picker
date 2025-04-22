@@ -1,3 +1,8 @@
+# Produced by Barbossa
+<img src=".github/logo.jpg" alt="barbossa" width="400"/>
+
+# ScreenShot
+<img src=".github/screenshot.jpg"/>
 # Setup
 Add the JitPack repository to settings.gradle file
 ```gradle

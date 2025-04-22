@@ -44,7 +44,7 @@ class MainActivity : ComponentActivity() {
                         modifier = Modifier
                             .align(Alignment.TopCenter)
                             .padding(50.dp),
-                        text = "Produced by lrn.ir",
+                        text = "Produced by Barbossa",
                         fontSize = 30.sp,
                         fontWeight = FontWeight.Bold,
                         color = if (isSystemInDarkTheme()) Color.White else Color.Black
