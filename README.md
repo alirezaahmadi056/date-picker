@@ -1,6 +1,3 @@
-# Produced by Barbossa
-<img src=".github/logo.jpg" alt="barbossa" width="400"/>
-
 # ScreenShot
 <img src=".github/screenshot.jpg" width="350"/>
 
