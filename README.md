@@ -1,6 +1,8 @@
 # ScreenShot
 <img src=".github/screenshot.jpg" width="350"/>
 
+## develop by :  @barbossa-dev
+
 # Setup
 Add the JitPack repository to settings.gradle file
 ```gradle
