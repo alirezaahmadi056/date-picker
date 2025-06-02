@@ -67,6 +67,9 @@ fun PersianDatePickerDialog(
     val month = remember {
         mutableStateOf(jalaliCalendar.monthString)
     }
+    val currentMonth = remember {
+        mutableStateOf(jalaliCalendar.month)
+    }
     val numberOfMonth = remember {
         mutableIntStateOf(jalaliCalendar.month)
     }
@@ -244,10 +247,11 @@ fun PersianDatePickerDialog(
                             }
                             Button(
                                 onClick = {
+                                    jalaliCalendar.month = currentMonth.value
                                     year.intValue = jalaliCalendar.year
                                     numberOfMonth.intValue = jalaliCalendar.month
-                                    selectedDay.intValue = jalaliCalendar.day
                                     month.value = jalaliCalendar.monthString
+                                    selectedDay.intValue = jalaliCalendar.day
                                     controller.onGoToday()
                                 },
                                 colors = ButtonDefaults.buttonColors(containerColor = theme.colorOfTheGoTodayButtonContainer),
@@ -287,7 +291,8 @@ fun PersianDatePickerDialog(
                 onConfirmation = {
                     year.intValue = yearPickerState.selectedItem.value.toInt()
                     month.value = monthPickerState.selectedItem.value
-                    numberOfMonth.intValue = PersianDatePickerModel.month.indexOf(monthPickerState.selectedItem.value) + 1
+                    numberOfMonth.intValue =
+                        PersianDatePickerModel.month.indexOf(monthPickerState.selectedItem.value) + 1
                     jalaliCalendar.year = year.intValue
                     jalaliCalendar.month = numberOfMonth.intValue
                     selectedDay.intValue = jalaliCalendar.day

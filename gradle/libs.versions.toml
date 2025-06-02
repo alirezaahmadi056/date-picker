@@ -1,5 +1,5 @@
 [versions]
-agp = "8.5.0-alpha04"
+agp = "8.5.2"
 composescrollpicker = "1.1.2"
 jalalicalendar = "2.0.0"
 kotlin = "2.0.0"
