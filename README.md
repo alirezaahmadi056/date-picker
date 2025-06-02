@@ -24,15 +24,16 @@ dependencies {
 ```
 # Example Date Picker
 ```kotlin
+var state by remember { mutableStateOf(false) }
 PersianDatePickerDialog(
-    onDismissRequest = { showDatePicker.value = false },
+    onDismissRequest = { state = false },
     controller = object : OnDatePickerEvents {
         override fun onConfirmButtonClick(year: Int, month: Int, day: Int) {
             Log.i("result", "onConfirmButtonClick: ${day}")
         }
 
         override fun onClose() {
-            showDatePicker.value = false
+            state = false
         }
 
         override fun onGoToday() {
@@ -49,7 +50,7 @@ PersianDatePickerDialog(
 # Example Range Date Picker
 ```kotlin
 PersianRangeDatePickerDialog(onDismissRequest = {
-    showRangeDatePicker.value = false
+    state = false
 }, controller = object : OnRangeDatePickerEvents{
     override fun onConfirmButtonClick(
         year: Int,
@@ -67,7 +68,7 @@ PersianRangeDatePickerDialog(onDismissRequest = {
         super.onGoToday()
     }
 
-    override fun onDateChange(year: Int, month: Int, day: ArrayList<Int>) {
+    override fun onDateChange(year: Int, month: Int, day: ArrayList<DayInfoModel>) {
         super.onDateChange(year, month, day)
     }
 })
