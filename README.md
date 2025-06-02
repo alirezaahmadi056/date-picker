@@ -19,7 +19,7 @@ Add the dependencies to app-level build.gradle file
 ```gradle
 dependencies {
     ...
-    implementation("com.github.alirezaahmadi056:date-picker:0.0.7")
+    implementation("com.github.alirezaahmadi056:date-picker:v0.0.7")
 }
 ```
 # Example Date Picker
