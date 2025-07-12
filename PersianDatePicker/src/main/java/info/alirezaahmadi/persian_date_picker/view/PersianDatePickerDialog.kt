@@ -68,7 +68,10 @@ fun PersianDatePickerDialog(
         mutableStateOf(jalaliCalendar.monthString)
     }
     val currentMonth = remember {
-        mutableStateOf(jalaliCalendar.month)
+        mutableIntStateOf(jalaliCalendar.month)
+    }
+    val currentYear = remember {
+        mutableIntStateOf(jalaliCalendar.year)
     }
     val numberOfMonth = remember {
         mutableIntStateOf(jalaliCalendar.month)
@@ -247,7 +250,8 @@ fun PersianDatePickerDialog(
                             }
                             Button(
                                 onClick = {
-                                    jalaliCalendar.month = currentMonth.value
+                                    jalaliCalendar.month = currentMonth.intValue
+                                    jalaliCalendar.year = currentYear.intValue
                                     year.intValue = jalaliCalendar.year
                                     numberOfMonth.intValue = jalaliCalendar.month
                                     month.value = jalaliCalendar.monthString
